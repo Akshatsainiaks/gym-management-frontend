@@ -8,7 +8,6 @@ const BuyProtein = () => {
     const [paymentMethod, setPaymentMethod] = useState("");
     const [isPurchased, setIsPurchased] = useState(false);
 
-    // 🏋️ List of Protein Products
     const proteinProducts = [
         { id: 1, name: "Whey Protein (1kg)", price: 2000 },
         { id: 2, name: "Plant Protein (1kg)", price: 1800 },
@@ -28,7 +27,6 @@ const BuyProtein = () => {
             <div className="bg-white p-8 rounded-lg shadow-lg max-w-md w-full">
                 <h2 className="text-2xl font-bold text-center text-gray-800">Buy Protein Supplements</h2>
 
-                {/* ✅ Show Confirmation after Purchase */}
                 {isPurchased ? (
                     <div className="text-center mt-6">
                         <p className="text-lg font-semibold text-green-600">🎉 Purchase Successful!</p>
@@ -43,7 +41,6 @@ const BuyProtein = () => {
                     </div>
                 ) : (
                     <div>
-                        {/* 🏋️ Select Protein Product */}
                         <h3 className="text-lg font-semibold mt-4">Choose a Supplement</h3>
                         {proteinProducts.map((protein) => (
                             <div key={protein.id} className="flex items-center justify-between p-2 border rounded-md mt-2">
@@ -60,7 +57,6 @@ const BuyProtein = () => {
                             </div>
                         ))}
 
-                        {/* 💳 Select Payment Method */}
                         <h3 className="text-lg font-semibold mt-4">Choose Payment Method</h3>
                         <select
                             className="w-full p-2 border rounded-md mt-2"
@@ -74,7 +70,6 @@ const BuyProtein = () => {
                             <option value="QR Code">QR Code</option>
                         </select>
 
-                        {/* 📌 QR Code for Payment */}
                         {paymentMethod === "QR Code" && selectedProtein && (
                             <div className="flex justify-center mt-4">
                                 <QRCodeCanvas 
@@ -84,7 +79,6 @@ const BuyProtein = () => {
                             </div>
                         )}
 
-                        {/* 🛒 Buy Button */}
                         <button
                             onClick={handlePurchase}
                             className="w-full bg-blue-600 text-white p-2 rounded-md mt-4"
@@ -92,7 +86,6 @@ const BuyProtein = () => {
                             Buy Now
                         </button>
 
-                        {/* 🔙 Back Button */}
                         <button
                             onClick={() => navigate("/dashboard")}
                             className="w-full bg-gray-600 text-white p-2 rounded-md mt-2"

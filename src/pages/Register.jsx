@@ -15,7 +15,7 @@ const Register = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const { data } = await axios.post("http://localhost:5002/api/register", formData);
+            const { data } = await axios.post("http://localhost:5004/api/register", formData);
             localStorage.setItem("userId", data.userId);
             alert("🎉 Registration successful!");
             navigate("/dashboard");
